@@ -53,10 +53,10 @@ void initialiseTimer1() {
   TCCR1A = 0;
   TCCR1B = 0;
 
-  // define o prescaler para clock/1024
+  // define o prescaler para clock/256
   TCCR1B |= (1 << CS12);  // 1 no bit CS12
   TCCR1B &= ~(1 << CS11); // 0 no bit CS11 (para ter certeza que está zerado)
-  TCCR1B &= ~(1 << CS11);  // 1 no bit CS10
+  TCCR1B &= ~(1 << CS11);  // 0 no bit CS10 (para ter certeza que está zerado)
 
   // define o tipo de interrupção para comparação
   TIMSK1 |= (1 << OCIE1A); // aciona o bit OCIE1A    
